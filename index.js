@@ -4,6 +4,7 @@ import commandUSD from './commands/usd.js'
 import commandFE from './commands/fe.js'
 import commandQR from './commands/qr.js'
 import commandTWGod from './commands/twgod.js'
+import commandImg from './commands/img.js'
 
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
@@ -19,6 +20,8 @@ bot.on('message', event => {
       commandFE(event)
     } else if (event.message.text === 'qr') {
       commandQR(event)
+    } else if (event.message.text === 'img') {
+      commandImg(event)
     }
   } else if (event.message.type === 'location') {
     commandTWGod(event)
