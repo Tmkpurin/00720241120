@@ -29,6 +29,6 @@ bot.on('postback', event => {
   event.reply('postback:' + event.postback.data)
 })
 
-bot.listen('/', 3000 || process.env.PORT, () => {
+bot.listen('/', process.env.PORT || 3000, () => {
   console.log('為什麼要演奏春日影')
 })
